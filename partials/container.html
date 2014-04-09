@@ -23,9 +23,21 @@
                 <td>{{ container.Args }}</td>
             </tr>
             <tr>
-                <td>Ports:</td>
+                <td>Port mapping:</td>
                 <td>
                     {{  container.NetworkSettings.PortMapping ||   container.Config.PortSpecs     }}
+                </td>
+
+            </tr>
+            <tr>
+                <td>Ports:</td>
+                <td>
+                    <ul>
+                    	<li data-ng-repeat="(k,v) in container.NetworkSettings.Ports">
+                    		<b>{{k}}</b>: 
+                    		<span data-ng-repeat="m in v">{{m.HostIp}}:{{m.HostPort}} </span>
+                    	</li>
+                    </ul>
                 </td>
 
             </tr>
