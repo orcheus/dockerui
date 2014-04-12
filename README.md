@@ -12,8 +12,8 @@ DockerUI is a web interface to interact with the Remote API.  The goal is to pro
 
 ### Container Quickstart 
 
-* Run `docker build -t crosbymichael/dockerui github.com/crosbymichael/dockerui`
-* `docker run -d -p 9000:9000 -v /var/run/docker.sock:/docker.sock crosbymichael/dockerui -e /docker.sock`
+* Run `docker build -t orcheus/dockerui github.com/orcheus/dockerui`
+* `docker run -d -p 9000:9000 -v /var/run/docker.sock:/docker.sock orcheus/dockerui -e /docker.sock`
 * Open your browser to `http://<dockerd host ip>`
 
 
@@ -25,7 +25,7 @@ nginx infront of dockerui with basic auth.
 If you want to connect to docker via the unix socket you can pass the socket path to the `-e` variable.  If you are running dockerui in a container you can bind mount the unix socket into the container.
 
 ```bash
-docker run -d -p 9000:9000 -v /var/run/docker.sock:/docker.sock crosbymichael/dockerui -e /docker.sock
+docker run -d -p 9000:9000 -v /var/run/docker.sock:/docker.sock orcheus/dockerui -e /docker.sock
 ```
 
 ### Stack
